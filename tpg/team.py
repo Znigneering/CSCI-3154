@@ -69,14 +69,13 @@ class Team:
         if learner in self.learners:
             learner.teamRefCount -= 1
             self.learners.remove(learner)
-
+            
     """
     Call before deleting a team, to properly dereference learners.
     """
     def erase(self):
         for learner in self.learners:
             learner.teamRefCount -= 1
-
 
     """
     Returns the number of atomic actions that this team has.
